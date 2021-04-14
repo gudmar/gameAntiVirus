@@ -1,0 +1,391 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.desktop {
+    position: relative;
+    height: calc(100vh - 2em);
+    overflow: hidden;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-wrap: wrap;
+    /* background: url('./Vectorized_Bliss.svg') center no-repeat; */
+    background-size: cover;
+}
+/* Menu with taskbar*/
+.desktop-down-menu {
+    position: absolute;
+    width: calc(100% - 7px);
+    left: 7px;
+    bottom: 0em;
+    height: 2em;
+    background-color:rgb(0, 0, 250);
+    padding: 0;
+}
+.desktop-start-menu {
+    display: block;
+    height: 2em;
+    line-height: 2em;
+    font-size: 1em;
+    text-align: center;
+    bottom: 0.2em;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    left: -7px;
+}
+.desktop-start-menu ul li{
+    white-space: nowrap;
+    padding-left: 1em;
+    padding-right: 1em;
+    
+}
+li{
+    border: none;
+}
+.desktop-start-menu ul li:hover{
+    background-color: rgba(150, 150, 220, 1);
+    cursor: pointer;
+}
+.desktop-start-menu ul li>ul{
+    left: 100%;
+}
+.desktop-start-menu ul {
+    border: black solid thin;
+    list-style-type: none;
+    padding: 0;
+    display: inline-block; 
+    visibility: hidden;
+    position: absolute;
+    background-color: rgb(220, 220, 220);
+    bottom: 1em;
+}
+.desktop-start-menu li:hover>ul{
+    visibility: visible;
+}
+
+.desktop>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.links svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/*Windows*/
+
+.shout {
+    background-color: red;
+    color: yellow;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+    display: inline-block; /*do not break line!!! */
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(0, 0, 0, 0.4);    
+    overflow: hidden;
+
+}
+.modal-green{
+    background-color: rgba(0, 255, 0, 0.4);
+}
+.modal-red{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.column-layout{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin:0;
+}
+.row-layout{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 0;
+    margin:0;
+}
+.text-content{
+    text-align: justify;
+    margin-left: 2em;
+    margin-right: 2em;
+    display: inline;
+    height: auto;
+}
+.info-container-basic{
+    position: absolute;
+    block-size: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ddd;
+}
+.info-container{
+    border: solid thick blue;
+    border-radius: 5px;
+    width: 40rem;
+    height: auto;
+}
+.popup{
+    width: 25rem;
+}
+.info-bar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding-top: 3px;
+    padding-left: 10px;
+    background: blue;
+    font-weight: bold;
+    height: 2em;
+   }
+.info-icon-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+.info-icon:hover{
+    cursor: pointer;
+}
+.info-icon{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    border-radius: 5px;
+    color: white;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 1.5px solid white;
+    margin-right: 5px;
+}
+.info-icon-red{
+    background-color: red;
+}
+.info-icon-green{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.25s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes blink {
+    0% { background-color: blue;}
+    25% { background-color: green;}
+    50% {background-color: yellow; color: black;}
+    75% { background-color: green;}
+    100%{ background-color: blue;}
+}
+.info-icon-green:hover{
+    transform: scale(1.2);
+    transition: 0.25s;
+}
+.info-message{
+    position: absolute;
+    line-height: 1em;
+    top: -1.3em;
+    right: 1em;
+    height: 1em;
+    background-color: white;
+    padding: 2px;
+}
+.links{
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+}
+/* .links div a {
+    display: inline-block;
+} */
+.links li a{
+    text-decoration: none;
+    color: white;
+    /* display: inline-block; */
+}
+
+
+/* Hardness level chooser*/
+.start-menu-form {
+    list-style-type: none;
+}
+.start-menu-form span {
+    text-align: center; 
+    margin: 1em;
+    font-weight: bold;
+    color: red;
+    font-size: 1.4em;
+}
+.add-spacing{
+    margin: 1rem;
+    position: relative;
+    width: auto;
+    display: inline-block;
+}
+.add-more-spacing{
+    margin: 3rem;
+    position: relative;
+    width: auto;
+    display: inline-block;
+}
+.game-lost{
+    background-color: red;
+}
+.game-lost h3 {
+    color: yellow;
+    font-size: 2rem;
+    font-weight: bold
+}
+
+.game-won{
+    background-color: green;
+}
+h3{
+    text-align: center;
+    font-size: 1.5rem;
+}
+.game-won h3 {
+    color: yellow;
+    font-size: 2rem;
+    font-weight: bold
+}
+/*Buttons*/
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 2.5em;
+    width: 5em;
+    color: white;
+    transition: 0.3s;
+    line-height: 2.5em;
+    font-size: 1.5em;
+    text-align: center;
+    margin: 0.3em;
+    cursor: pointer;
+}
+.desktop-start-button {
+    position: absolute;
+    border: black thin solid;
+    background-color: green;
+    height: 1.5em;
+    top: 8px;
+    width: 4em;
+    left: -7px;
+}
+.button img{
+    position: relative;
+    width: 4em;
+    height:2em;
+}
+.button-narrow{
+    width: 4rem;
+}
+.button-wide{
+    width: 18rem;
+}
+.button:hover{
+    transform: scale(1.3);
+    transition: 0.3s;
+}
+.red{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+    color: black;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+    color: white;
+}
+
+.score:before{
+    color: red;
+    content: 'Score: ';
+}
+.time:before{
+    color: red;
+    content: 'Time: '
+}
+.time-red {
+    color: red;
+}
+.hidden-opacity {
+    /* color: rgba(0, 0, 0, 0); */
+    opacity: 0;
+}
+
+.impossible:hover:after{
+    position: absolute;
+    top: -1.5rem;
+    content: 'Impossible';
+    height: 1.2rem;
+    line-height: 1.2rem;
+    background-color: white;
+    padding: 5px;
+    color: black;
+}
+
+
+/* Score */
+.points>div {
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: relative;
+    display: inline-block;
+    height: 2em;
+    width: auto;
+    line-height: 2em;
+    padding: 0rem 1rem;
+    margin: 0rem 0.5rem;
+}
+.points{
+    position: absolute;
+    display: flex;
+    height: 2rem;
+    width: auto;
+    top: 0.5rem;
+    right: 0rem;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    color: yellow;
+    font-size: 1.3em;
+    font-weight: bolder
+}
+.add-spacing>svg{
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+

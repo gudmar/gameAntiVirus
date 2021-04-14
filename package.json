@@ -1,0 +1,21 @@
+{
+  "name": "geme_buggs",
+  "version": "1.0.0",
+  "description": "Simple browser game made for training purposes",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^4.0.2"
+  },
+  "devDependencies": {
+    "gulp-inline": "^0.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Virus",
+    "game"
+  ],
+  "author": "Marek Gudalewicz",
+  "license": "ISC"
+}
