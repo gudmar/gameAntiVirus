@@ -718,7 +718,7 @@ class Manager {
     run() {
         var scoreW = new ScoreWindow('desktop');
         scoreW.create();
-        this.scoreHandel = scoreW
+        this.scoreHandel = scoreW;
         let stWin = new StartWindow()
         var startMenu = stWin.create()
         var that = this
@@ -735,6 +735,7 @@ class Manager {
         document.getElementById('launchAntyvir').addEventListener('click', doLaunchAntyvir);
         document.getElementById(this.root).addEventListener('GameWon', function(e) {
             clearInterval(that.interval)
+            that.points = that.scoreHandel.getScore();
             let gameInfo = new GameWon(that.root, that.points)
             gameInfo.create()
         })
@@ -747,7 +748,7 @@ class Manager {
             console.log('Game started in easy mode')
             scoreW.createTimer()
             scoreW.startTimer()
-            that.timeoutInterval = 4000
+            that.timeoutInterval = 4250
             that.hardnes = 'easy'
             that.setTimeInterval()
         })
